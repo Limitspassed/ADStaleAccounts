@@ -46,7 +46,7 @@ Clean-ADStaleUsers -GetLastLoggedIn Yes -DeleteStaleAccounts Yes -GenerateReport
 
 Clone the repository:
 
-git clone https://github.com/yourusername/ADStaleAccounts.git
+git clone https://github.com/Limitspassed/ADStaleAccounts.git
 
 Import the module in PowerShell:
 
@@ -57,5 +57,5 @@ Import-Module "C:\path\to\ADStaleAccounts"
 - PowerShell 5.1 or later
 - Active Directory module for PowerShell
 
-##License
+## License
 This project is licensed under the MIT License - see the LICENSE file for details.
