@@ -10,7 +10,7 @@ The repository is strucured as follows:
 
 ```
 ADStaleAccounts/
-├── 1.0/                                # Version directory
+├── 1.1/                                # Version directory
 │   ├── Public/                         # Public scripts
 │   │   ├── Create-ADTestComputers.ps1  # Script for creating test computers
 │   │   ├── Create-ADTestUsers.ps1      # Script for creating test users
