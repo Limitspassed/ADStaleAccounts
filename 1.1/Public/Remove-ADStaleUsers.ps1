@@ -1,11 +1,11 @@
-function Clean-ADStaleUsers {
+function Remove-ADStaleUsers {
 
     <#
     .SYNOPSIS
-    Cleans up stale Active Directory user accounts based on last logon date.
+    Removes stale Active Directory user accounts based on last logon date.
     
     .DESCRIPTION
-    The Clean-ADStaleUsers function identifies user accounts in a specified Organizational Unit (OU) that have not logged in for over 90 days or have never logged in. It provides options to generate a report and delete stale accounts.
+    The Remove-ADStaleComputers function identifies user accounts in a specified Organizational Unit (OU) that have not logged in for over 90 days or have never logged in. It provides options to generate a report and delete stale accounts.
     
     .PARAMETER GetLastLoggedIn
     Specifies whether to check the last logged-in dates of user accounts. Accepts "Yes" or "No".
@@ -23,7 +23,7 @@ function Clean-ADStaleUsers {
     The Organizational Unit in which to search for user accounts.
     
     .EXAMPLE
-    Clean-ADStaleUsers -GetLastLoggedIn "Yes" -DeleteStaleAccounts "Yes" -GenerateReport "Yes" -ReportPath "C:\Reports\StaleUsersReport.txt" -OU "OU=Users,DC=example,DC=com"
+    Remove-ADStaleUsers -GetLastLoggedIn "Yes" -DeleteStaleAccounts "Yes" -GenerateReport "Yes" -ReportPath "C:\Reports\StaleUsersReport.txt" -OU "OU=Users,DC=example,DC=com"
     This command checks for stale user accounts in the specified OU, deletes those that have not logged in for over 90 days, and generates a report at the specified path.
     
     #>
