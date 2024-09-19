@@ -55,7 +55,7 @@ function Remove-ADStaleComputers {
         $Array = foreach ($ADComputer in $ADComputers){
             if ($ADComputer.LastLogonDate -ne $null -and $ADComputer.LastLogonDate -lt $Date.AddDays(-90)) {
                 if ($GenerateReport -eq "Yes") {
-                    $ReportText = "$($ADComputer.SamAccountName) has never logged on."
+                    $ReportText = "$($ADComputer.SamAccountName) last logged in on $($ADComputer.LastLogonDate)."
                     $ADComputer
                     $ReportText | Out-File $reportPath -Append | Sort-Object -Descending
                     Write-Verbose "$($ADComputer.SamAccountName) last logged in on $($ADComputer.LastLogonDate)."
