@@ -56,7 +56,7 @@ function Remove-ADStaleUsers {
         $Array = foreach ($ADUser in $ADUsers){
             if ($ADUser.SamAccountName -notin $Ignore -and $ADUser.LastLogonDate -ne $null -and $ADUser.LastLogonDate -lt $Date.AddDays(-90)) {
                 if ($GenerateReport -eq "Yes") {
-                    $ReportText = "$($ADUser.SamAccountName) has never logged on."
+                    $ReportText = "$($ADUser.SamAccountName) last logged in on $($ADUser.LastLogonDate)."
                     $ADUser
                     $ReportText | Out-File $reportPath -Append | Sort-Object -Descending
                     Write-Verbose "$($ADUser.SamAccountName) last logged in on $($ADUser.LastLogonDate)."
